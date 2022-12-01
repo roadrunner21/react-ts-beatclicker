@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../app/store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 
-export const GAME_START = 'GAME_START'
-export const GAME_RUNNING = 'GAME_RUNNING'
-export const GAME_END = 'GAME_END'
+export const GAME_START = "GAME_START";
+export const GAME_RUNNING = "GAME_RUNNING";
+export const GAME_END = "GAME_END";
 
 const gameModeNames = [GAME_START, GAME_RUNNING, GAME_END] as const;
 
@@ -18,14 +18,14 @@ const initialState: GameState = {
 };
 
 export const gameSlice = createSlice({
-    name: 'game',
+    name: "game",
     initialState,
     reducers: {
         setMode: (state, action: PayloadAction<GameModes>) => {
             state.mode = action.payload;
         },
     },
-})
+});
 
 export const { setMode } = gameSlice.actions;
 

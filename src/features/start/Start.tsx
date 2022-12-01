@@ -9,7 +9,7 @@ export function Start() {
 
     const startGame = () => {
         dispatch(setMode(GAME_RUNNING));
-    }
+    };
 
     return <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
         <Typography align={"center"} variant={"h1"} component={"h1"}>
@@ -21,5 +21,5 @@ export function Start() {
         <IconButton onClick={startGame}>
             <PlayArrow sx={{ fontSize: "10rem" }}/>
         </IconButton>
-    </Box>
+    </Box>;
 }
