@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
-export const GAME_START = 'GAME_START';
-export const GAME_RUNNING = 'GAME_RUNNING';
-export const GAME_END = 'GAME_END';
+export const GAME_START = 'GAME_START'
+export const GAME_RUNNING = 'GAME_RUNNING'
+export const GAME_END = 'GAME_END'
 
-export type GameModes = 'GAME_START' | 'GAME_RUNNING' | 'GAME_END'
+const gameModeNames = [GAME_START, GAME_RUNNING, GAME_END] as const;
+
+export type GameModes = typeof gameModeNames[number];
 
 export interface GameState {
     mode: GameModes;
