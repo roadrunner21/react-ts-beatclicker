@@ -25,16 +25,21 @@ function Header() {
         setAnchorElNav(null);
     };
 
-
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}>
+                    <Box sx={{
+                        display: { xs: "none", md: "flex" },
+                        mr: 2
+                    }}>
                         <Logo/>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                    <Box sx={{
+                        flexGrow: 1,
+                        display: { xs: "flex", md: "none" }
+                    }}>
                         <IconButton
                             size="large"
                             aria-label="menu items"
@@ -71,7 +76,10 @@ function Header() {
                         </Menu>
                     </Box>
                     <Box sx={{
-                        display: { xs: "flex", md: "none" },
+                        display: {
+                            xs: "flex",
+                            md: "none"
+                        },
                         flexGrow: 1,
                     }}>
                         <Logo/>
@@ -81,8 +89,11 @@ function Header() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: "white", display: "block" }}
-                            >
+                                sx={{
+                                    display: "block",
+                                    my: 2,
+                                    color: "white",
+                                }}>
                                 {page}
                             </Button>
                         ))}

@@ -7,7 +7,6 @@ function Running() {
     const [play] = useSound(kick);
     setInterval(() => {
         play();
-        console.log("kick");
     }, 500);
 
     return <Fragment>
