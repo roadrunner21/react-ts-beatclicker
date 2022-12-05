@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
-import { Modal } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import { Settings } from "@mui/icons-material";
+import { DialogContent, Modal } from "@mui/material";
+import { Settings as SettingsIcon } from "@mui/icons-material";
+import Settings from "../features/settings/Settings";
 
 function SettingsButton() {
     const [settingsOpened, setSettingsOpened] = useState(false);
@@ -20,7 +20,7 @@ function SettingsButton() {
         <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenSettings} sx={{ p: 0 }}>
-                    <Settings/>
+                    <SettingsIcon/>
                 </IconButton>
             </Tooltip>
             <Modal
@@ -29,14 +29,9 @@ function SettingsButton() {
                 aria-labelledby="settings"
                 aria-describedby="settings"
             >
-                <Box>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
-                </Box>
+                <DialogContent>
+                    <Settings/>
+                </DialogContent>
             </Modal>
         </Box>);
 }
