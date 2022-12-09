@@ -1,17 +1,13 @@
-import React from "react";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import theme from "../theme/theme";
-import Game from "../features/game/Game";
-import Header from "../features/header/Header";
+import React, { Fragment } from "react";
+import RouteHandler from "../common/RouteHandler";
+import Routes from "../pages/index";
 
 function App() {
 
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline/>
-            <Header/>
-            <Game/>
-        </ThemeProvider>
+        <Fragment>
+            <RouteHandler routes={Routes}/>
+        </Fragment>
     );
 }
 

@@ -4,7 +4,7 @@ import React from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { GAME_RUNNING, setMode } from "../game/gameSlice";
 
-export function Start() {
+function Start() {
     const dispatch = useAppDispatch();
 
     const startGame = () => {
@@ -26,3 +26,5 @@ export function Start() {
         </IconButton>
     </Box>;
 }
+
+export default Start;

@@ -8,6 +8,9 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import theme from "./theme/theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -15,7 +18,12 @@ const root = createRoot(container);
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App/>
+            <BrowserRouter>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline/>
+                    <App/>
+                </ThemeProvider>
+            </BrowserRouter>
         </Provider>
     </React.StrictMode>
 );
