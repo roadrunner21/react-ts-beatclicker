@@ -1,7 +1,7 @@
 import React from "react";
-import { MusicNote } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
+import LogoIcon from "./LogoIcon";
 
 function Logo() {
     return (
@@ -10,7 +10,7 @@ function Logo() {
             alignItems: "center",
         }}
         >
-            <MusicNote/>
+            <LogoIcon/>
             <Typography
                 variant="h5"
                 noWrap
@@ -28,7 +28,7 @@ function Logo() {
                 BEATCLICKER
             </Typography>
         </Box>
-    );
+    )
 }
 
 export default Logo;

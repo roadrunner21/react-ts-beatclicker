@@ -4,7 +4,7 @@ import Game from "../../features/game/Game";
 
 const Home: IndexPage = {
     index: true,
-    path: undefined,
+    path: "/",
     exact: true,
     Component: Game,
     access: ACCESS_TYPE_ALL,

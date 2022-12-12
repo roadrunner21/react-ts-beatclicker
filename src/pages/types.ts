@@ -9,16 +9,15 @@ interface PageBase {
     exact: boolean,
     Component: React.FunctionComponent,
     access: PageAccessTypes,
+    path: string,
 }
 
 export interface IndexPage extends PageBase {
     index: true,
-    path: undefined,
 }
 
 export interface PathPage extends PageBase {
     index: false,
-    path: string,
 }
 
 export type Page = IndexPage | PathPage;
