@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./layout/Layout";
+import Layout from "../common/layout/Layout";
 import { Page } from "../pages/types";
-import NoMatch from "./NoMatch";
+import NoMatch from "../common/NoMatch";
 
 interface RouteHandlerProps {
     routes: Array<Page>;

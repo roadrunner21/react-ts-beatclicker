@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import RouteHandler from "../common/RouteHandler";
+import RouteHandler from "./RouteHandler";
 import Routes from "../pages/index";
 
 function App() {
