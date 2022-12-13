@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAction, createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 export const GAME_START = "GAME_START";
@@ -17,7 +17,7 @@ const initialState: GameState = {
     mode: GAME_START,
 };
 
-export const gameSlice = createSlice({
+export const gameSlice: Slice<GameState> = createSlice({
     name: "game",
     initialState,
     reducers: {
@@ -27,7 +27,7 @@ export const gameSlice = createSlice({
     },
 });
 
-export const { setMode } = gameSlice.actions;
+export const setMode = createAction<GameModes>("game/setMode");
 
 export const selectGame = (state: RootState) => state.game;
 

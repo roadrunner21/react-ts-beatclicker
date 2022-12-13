@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAction, createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 export interface SettingsState {
@@ -9,7 +9,7 @@ const initialState: SettingsState = {
     bpm: 145,
 };
 
-export const settingsSlice = createSlice({
+export const settingsSlice: Slice<SettingsState> = createSlice({
     name: "settings",
     initialState,
     reducers: {
@@ -19,7 +19,7 @@ export const settingsSlice = createSlice({
     },
 });
 
-export const { setBpm } = settingsSlice.actions;
+export const setBpm = createAction<SettingsState["bpm"]>("settings/setBpm");
 
 export const selectSettings = (state: RootState) => state.settings;
 
