@@ -1,12 +1,9 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import gameReducer from "../features/game/gameSlice";
-import settingsReducer from "../features/settings/settingsSlice";
+import settingsReducer, { selectSettings } from "../features/settings/settingsSlice";
 
-let preloadedState = {};
 const item = localStorage.getItem("reduxState");
-if (item !== null) {
-    preloadedState = JSON.parse(item);
-}
+const preloadedState = item !== null ? JSON.parse(item) : {};
 
 export const store = configureStore({
     reducer: {
@@ -17,8 +14,10 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
-    localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+    const state = { settings: selectSettings(store.getState()) };
+    localStorage.setItem("reduxState", JSON.stringify(state));
 });
+
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
