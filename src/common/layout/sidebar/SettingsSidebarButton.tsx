@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Drawer } from "@mui/material";
-import Sidebar from "./Sidebar";
+import SettingsSidebar from "./SettingsSidebar";
+import { Settings as SettingsIcon } from "@mui/icons-material";
 
-function SidebarButton() {
-    const [isOpen, setOpen] = useState(false);
+function SettingsSidebarButton() {
+    const [isOpen, setOpen] = useState(true);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -14,23 +14,23 @@ function SidebarButton() {
         <Fragment>
             <IconButton
                 size="large"
-                aria-label="menu items"
-                aria-controls="menu-appbar"
+                aria-label="settings sidebar"
+                aria-controls="settings-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
                 color="inherit"
             >
-                <MenuIcon/>
+                <SettingsIcon/>
             </IconButton>
             <Drawer
-                anchor="left"
+                anchor="right"
                 open={isOpen}
                 onClose={handleClose}
             >
-                <Sidebar/>
+                <SettingsSidebar/>
             </Drawer>
         </Fragment>
     );
 }
 
-export default SidebarButton;
+export default SettingsSidebarButton;

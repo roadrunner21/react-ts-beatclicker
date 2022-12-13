@@ -1,9 +1,10 @@
 import React from "react";
 import { AppBar, Box, Container, Toolbar } from "@mui/material";
-import SidebarButton from "./sidebar/SidebarButton";
+import MenuSidebarButton from "./sidebar/MenuSidebarButton";
 import Logo from "../logo/Logo";
 import SettingsButton from "../SettingsButton";
 import DesktopMenu from "./menu/DesktopMenu";
+import SettingsSidebarButton from "./sidebar/SettingsSidebarButton";
 
 function Header() {
     return (
@@ -14,7 +15,7 @@ function Header() {
                         display: { xs: "flex", sm: "none" },
                         flexGrow: 1,
                     }}>
-                        <SidebarButton/>
+                        <MenuSidebarButton/>
                     </Box>
                     <Logo/>
                     <Box sx={{
@@ -29,7 +30,7 @@ function Header() {
                         flexGrow: 1,
                         justifyContent: "flex-end",
                     }}>
-                        <SettingsButton/>
+                        <SettingsSidebarButton/>
                     </Box>
                 </Toolbar>
             </Container>

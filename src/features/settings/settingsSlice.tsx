@@ -2,25 +2,25 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 export interface SettingsState {
-    foo: string;
+    bpm: number;
 }
 
 const initialState: SettingsState = {
-    foo: "bar",
+    bpm: 145,
 };
 
 export const settingsSlice = createSlice({
     name: "settings",
     initialState,
     reducers: {
-        setFoo: (state, action: PayloadAction<string>) => {
-            state.foo = action.payload;
+        setBpm: (state, action: PayloadAction<SettingsState["bpm"]>) => {
+            state.bpm = action.payload;
         },
     },
 });
 
-export const { setFoo } = settingsSlice.actions;
+export const { setBpm } = settingsSlice.actions;
 
-export const selectSettings = (state: RootState) => state.settings.foo;
+export const selectSettings = (state: RootState) => state.settings;
 
 export default settingsSlice.reducer;

@@ -3,7 +3,7 @@ import MobileMenu from "../menu/MobileMenu";
 import LogoIcon from "../../logo/LogoIcon";
 import { Box } from "@mui/material";
 
-function Sidebar() {
+function MenuSidebar() {
     return (
         <Box p={2}>
             <Box display={"flex"} justifyContent={"center"}>
@@ -14,4 +14,4 @@ function Sidebar() {
     );
 }
 
-export default Sidebar;
+export default MenuSidebar;

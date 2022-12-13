@@ -27,7 +27,28 @@ const themeOptions: ThemeOptions = {
         primary: {
             main: darkBlue[50],
         },
-    }
+    },
+    typography: {
+        fontFamily: "Roboto, sans-serif",
+        h1: {
+            fontSize: "2.5rem",
+        },
+        h2: {
+            fontSize: "2.1rem",
+        },
+        h3: {
+            fontSize: "1.8rem",
+        },
+        h4: {
+            fontSize: "1.5rem",
+        },
+        h5: {
+            fontSize: "1.2rem",
+        },
+        h6: {
+            fontSize: "1rem",
+        },
+    },
 };
 
 const theme = createTheme(themeOptions);
