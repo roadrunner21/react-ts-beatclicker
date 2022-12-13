@@ -1,16 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
 function Layout() {
     return (
-        <Fragment>
+        <>
             <Header/>
             <Box py={3}>
                 <Outlet/>
             </Box>
-        </Fragment>
+        </>
     );
 }
 

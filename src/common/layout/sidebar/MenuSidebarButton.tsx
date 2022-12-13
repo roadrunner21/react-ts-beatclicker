@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Drawer } from "@mui/material";
@@ -11,25 +11,23 @@ function MenuSidebarButton() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Fragment>
+        <>
             <IconButton
                 size="large"
                 aria-label="menu items"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
-                color="inherit"
-            >
+                color="inherit">
                 <MenuIcon/>
             </IconButton>
             <Drawer
                 anchor="left"
                 open={isOpen}
-                onClose={handleClose}
-            >
+                onClose={handleClose}>
                 <MenuSidebar/>
             </Drawer>
-        </Fragment>
+        </>
     );
 }
 

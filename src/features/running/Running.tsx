@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Typography } from "@mui/material";
 import useSound from "use-sound";
 import kick from "./KICK01.wav";
@@ -9,11 +9,11 @@ function Running() {
         play();
     }, 500);
 
-    return <Fragment>
+    return <>
         <Typography align={"center"} variant={"h5"} component={"h2"}>
             Match the beat
         </Typography>
-    </Fragment>;
+    </>;
 }
 
 export default Running;

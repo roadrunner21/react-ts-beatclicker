@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import { Drawer } from "@mui/material";
 import SettingsSidebar from "./SettingsSidebar";
@@ -11,25 +11,23 @@ function SettingsSidebarButton() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Fragment>
+        <>
             <IconButton
                 size="large"
                 aria-label="settings sidebar"
                 aria-controls="settings-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
-                color="inherit"
-            >
+                color="inherit">
                 <SettingsIcon/>
             </IconButton>
             <Drawer
                 anchor="right"
                 open={isOpen}
-                onClose={handleClose}
-            >
+                onClose={handleClose}>
                 <SettingsSidebar/>
             </Drawer>
-        </Fragment>
+        </>
     );
 }
 
