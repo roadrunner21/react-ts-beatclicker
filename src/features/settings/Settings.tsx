@@ -1,37 +1,45 @@
-import React, { Fragment } from "react";
+import React, { useCallback } from "react";
 import Typography from "@mui/material/Typography";
 import { Box, Divider, TextField } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 import { selectSettings, setBpm } from "./settingsSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
-function Settings() {
-    const settings = useAppSelector(selectSettings);
-    const dispatch = useAppDispatch();
+const Settings = () => {
+    const { bpm } = useSelector(selectSettings);
+    const dispatch = useDispatch();
 
-    const handleBpmChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = parseInt(event.target.value);
-        dispatch(setBpm(value));
-    };
+    // avoid creating a new function on every re-render
+    const handleBpmChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setBpm(+event.target.value));
+    }, [dispatch]);
 
     return (
-        <Fragment>
-            <Typography component={"p"} variant={"h5"} gutterBottom>Settings</Typography>
+        <>
+            <Typography component={"p"} variant={"h5"} gutterBottom>
+                Settings
+            </Typography>
             <Divider/>
-            <Box display="flex" justifyContent="space-between" alignItems={"center"} lineHeight={1} py={2}>
+            <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems={"center"}
+                lineHeight={1}
+                py={2}>
                 <TextField
                     type="number"
                     InputProps={{
                         inputProps: {
-                            max: 999, min: 1,
+                            max: 999,
+                            min: 1,
                         },
                     }}
                     label="BPM"
                     onChange={handleBpmChange}
-                    value={settings.bpm}
+                    value={bpm}
                 />
             </Box>
-        </Fragment>
+        </>
     );
-}
+};
 
 export default Settings;
