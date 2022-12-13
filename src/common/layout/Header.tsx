@@ -2,7 +2,6 @@ import React from "react";
 import { AppBar, Box, Container, Toolbar } from "@mui/material";
 import MenuSidebarButton from "./sidebar/MenuSidebarButton";
 import Logo from "../logo/Logo";
-import SettingsButton from "../SettingsButton";
 import DesktopMenu from "./menu/DesktopMenu";
 import SettingsSidebarButton from "./sidebar/SettingsSidebarButton";
 
