@@ -17,34 +17,37 @@ function Running(props: RunningProps) {
     const effectCalled = useRef(false);
     // Use the useCallback hook to avoid re-creating the function on every render
     const gameLoop = useCallback(() => {
-        let i = 0;
+        let i = 1;
 
         // time axis
         function tick() {
             play();
 
             switch (true) {
-                case i < 5:
+                case i <= 5:
                     // Increase volume from 0.2 to 1.0 during the first five iterations
                     setVolume(0.2 + i / 5);
                     break;
-                case i < 10:
+                case i === 10:
                     setText("Beat is going to drop out");
                     break;
-                case i < 15:
+                case i >= 15 && i <= 20:
                     // Decrease volume from 1.0 to 0.0 during the next five iterations
-                    setVolume(1.0 - (i - 9) / 5);
+                    setVolume(1.0 - (i - 15) / 5);
                     break;
-                case i < 25:
+                case i === 21:
                     setText("Let's go!");
-                    break;
-                case i < 35:
-                    setText("Keep going!");
                     // start recording user input for the next 20 iterations
                     break;
-                default:
+                case i === 31:
+                    setText("Almost there!");
+                    break;
+                case i === 36:
+                    setText("Keep going!");
+                    break;
+                case i === 41:
                     setText("Finish");
-                    return;
+                    break;
             }
 
             i++;
@@ -60,7 +63,7 @@ function Running(props: RunningProps) {
         }
         gameLoop();
         effectCalled.current = true;
-    }, [gameLoop]);
+    }, []);
 
     return (
         <>
