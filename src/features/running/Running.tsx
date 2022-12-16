@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Typography } from "@mui/material";
-import { useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
+import { setStartTimestamp } from "./runningSlice";
+import moment from "moment";
 
 export interface RunningProps {
     play: PlayFunction;
@@ -10,9 +12,11 @@ export interface RunningProps {
 }
 
 function Running(props: RunningProps) {
+    const dispatch = useAppDispatch();
     const { bpm } = useAppSelector(selectSettings);
     const { play, setVolume } = props;
     const [text, setText] = useState("Get ready...");
+    const [record, setRecord] = useState(false);
     // using a ref to ensure useEffect gameLoop hook only runs once even in strictMode
     const effectCalled = useRef(false);
     // Use the useCallback hook to avoid re-creating the function on every render
@@ -37,25 +41,19 @@ function Running(props: RunningProps) {
                     break;
                 case i === 21:
                     setText("Let's go!");
-                    // start recording user input for the next 20 iterations
-                    break;
-                case i === 31:
-                    setText("Almost there!");
-                    break;
-                case i === 36:
-                    setText("Keep going!");
-                    break;
-                case i === 41:
-                    setText("Finish");
-                    break;
+                    // record the timestamp of start
+                    dispatch(setStartTimestamp(moment().unix()));
+                    setRecord(true);
+                    return;
             }
 
+            play();
+            setTimeout(tick, (60000 / bpm));
             i++;
-            setTimeout(tick, 60000 / bpm);
         }
 
         tick();
-    }, [play, setVolume, bpm]);
+    }, [play, bpm, setVolume, dispatch]);
 
     useEffect(() => {
         if (effectCalled.current) {

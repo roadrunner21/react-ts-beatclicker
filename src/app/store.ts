@@ -1,6 +1,7 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import gameReducer from "../features/game/gameSlice";
 import settingsReducer, { selectSettings } from "../features/settings/settingsSlice";
+import runningReducer from "../features/running/runningSlice";
 
 const item = localStorage.getItem("reduxState");
 const preloadedState = item !== null ? JSON.parse(item) : {};
@@ -9,6 +10,7 @@ export const store = configureStore({
     reducer: {
         game: gameReducer,
         settings: settingsReducer,
+        running: runningReducer,
     },
     preloadedState,
 });
