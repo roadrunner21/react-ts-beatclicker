@@ -20,14 +20,14 @@ export const runningSlice: Slice<RunningState> = createSlice({
         setStartTimestamp: (state, action: PayloadAction<number>) => {
             state.startTimestamp = action.payload;
         },
-        addUserTimestamps: (state, action: PayloadAction<Timestamp>) => {
+        addUserTimestamp: (state, action: PayloadAction<Timestamp>) => {
             state.userTimestamps = [...state.userTimestamps, action.payload];
         },
     },
 });
 
 export const setStartTimestamp = createAction<Timestamp>("running/setStartTimestamp");
-export const addUserTimestamps = createAction<Timestamp>("running/addUserTimestamps");
+export const addUserTimestamp = createAction<Timestamp>("running/addUserTimestamp");
 
 export const selectRunning = (state: RootState) => state.running;
 

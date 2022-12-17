@@ -5,6 +5,7 @@ import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
 import { setStartTimestamp } from "./runningSlice";
 import moment from "moment";
+import BeatAnimation from "../../common/BeatAnimation";
 
 export interface RunningProps {
     play: PlayFunction;
@@ -61,7 +62,7 @@ function Running(props: RunningProps) {
         }
         gameLoop();
         effectCalled.current = true;
-    }, []);
+    }, [gameLoop]);
 
     return (
         <>
@@ -71,6 +72,7 @@ function Running(props: RunningProps) {
             <Typography align={"center"} component={"p"}>
                 {text}
             </Typography>
+            <BeatAnimation/>
         </>
     );
 }
