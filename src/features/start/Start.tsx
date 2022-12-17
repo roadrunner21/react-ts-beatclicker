@@ -1,7 +1,7 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import { PlayArrow } from "@mui/icons-material";
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 import { GAME_LOADING, GAME_RUNNING, selectGame, setMode } from "../game/gameSlice";
 
 function Start() {

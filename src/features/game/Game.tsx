@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Start from "../start/Start";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 import { GAME_LOADING, GAME_READY, GAME_RUNNING, selectGame, setMode } from "./gameSlice";
 import Running from "../running/Running";
 import { Box } from "@mui/material";
