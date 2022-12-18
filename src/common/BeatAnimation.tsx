@@ -29,7 +29,6 @@ const BeatAnimation = () => {
     }
 
     const handleEvent = useCallback(() => {
-        console.log("handleEvent");
         const x = randomInt(Math.floor(window.innerWidth * 0.2), Math.floor(window.innerWidth * 0.8));
         const y = randomInt(Math.floor(window.innerHeight * 0.2), Math.floor(window.innerHeight * 0.8));
         const color = animationColors[randomInt(0, animationColors.length - 1)];
