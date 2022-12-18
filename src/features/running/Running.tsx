@@ -45,7 +45,7 @@ function Running(props: RunningProps) {
                 case i === 21:
                     setText("Let's go!");
                     // record the timestamp of start
-                    dispatch(setStartTimestamp(moment().unix()));
+                    dispatch(setStartTimestamp(moment().valueOf()));
                     setRecord(true);
                     return;
             }
@@ -68,7 +68,7 @@ function Running(props: RunningProps) {
 
     const handleInput = useCallback(() => {
         if (record) {
-            dispatch(addUserTimestamp(moment().unix()));
+            dispatch(addUserTimestamp(moment().valueOf()));
         }
         if (userTimestamps.length === 20) {
             setRecord(false);
