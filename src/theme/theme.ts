@@ -48,6 +48,28 @@ const themeOptions: ThemeOptions = {
         h6: {
             fontSize: "1rem",
         },
+        body1: {
+            marginBottom: "1.5em",
+        },
+    },
+    components: {
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    margin: ".5em 0",
+                },
+            },
+        },
+        MuiListItemText: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                },
+                primary: {
+                    margin: 0,
+                },
+            },
+        },
     },
 };
 
