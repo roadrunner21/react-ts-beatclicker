@@ -3,9 +3,10 @@ import { Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector, useBeatInput } from "../../hooks";
 import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
-import { addUserTimestamp, setStartTimestamp } from "./runningSlice";
+import { addUserTimestamp, selectRunning, setStartTimestamp } from "./runningSlice";
 import moment from "moment";
 import BeatAnimation from "../../common/BeatAnimation";
+import { GAME_END, setMode } from "../game/gameSlice";
 
 export interface RunningProps {
     play: PlayFunction;
@@ -15,6 +16,7 @@ export interface RunningProps {
 function Running(props: RunningProps) {
     const dispatch = useAppDispatch();
     const { bpm } = useAppSelector(selectSettings);
+    const { userTimestamps } = useAppSelector(selectRunning);
     const { play, setVolume } = props;
     const [text, setText] = useState("Get ready...");
     const [record, setRecord] = useState(false);
@@ -68,7 +70,11 @@ function Running(props: RunningProps) {
         if (record) {
             dispatch(addUserTimestamp(moment().unix()));
         }
-    }, [dispatch, record]);
+        if (userTimestamps.length === 20) {
+            setRecord(false);
+            dispatch(setMode(GAME_END));
+        }
+    }, [userTimestamps, dispatch, record]);
 
     useBeatInput(handleInput);
 
