@@ -8,16 +8,22 @@ const useBeatInput = (
     element: Element = window,
 ): void => {
     useEffect(() => {
-        // events to listen for
-        const events = ["space", "enter", "mousedown"];
-        events.forEach((eventName) => {
-            element.addEventListener(eventName, onBeatInput);
-        });
-        // cleanup function to remove the event listeners when the component unmounts
+        const handleKeyDown = (event: Event) => {
+            if (event instanceof KeyboardEvent && (event.code === "Space" || event.code === "Enter")) {
+                onBeatInput();
+            }
+        };
+
+        const handleMouseDown = () => {
+            onBeatInput();
+        };
+
+        element.addEventListener("keydown", handleKeyDown);
+        element.addEventListener("mousedown", handleMouseDown);
+
         return () => {
-            events.forEach((eventName) => {
-                element.removeEventListener(eventName, onBeatInput);
-            });
+            element.removeEventListener("keydown", handleKeyDown);
+            element.removeEventListener("mousedown", handleMouseDown);
         };
     }, [onBeatInput, element]);
 };

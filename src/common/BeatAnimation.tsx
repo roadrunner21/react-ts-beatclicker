@@ -1,27 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { Box, useTheme } from "@mui/material";
-
-const colors = [
-    "#FFEB3B", // Yellow
-    "#FFC107", // Amber
-    "#FF9800", // Orange
-    "#FF5722", // Deep orange
-    "#FF1744", // Red
-    "#F50057", // Pink
-    "#D500F9", // Purple
-    "#9C27B0", // Deep purple
-    "#673AB7", // Indigo
-    "#3F51B5", // Blue
-    "#2196F3", // Light blue
-    "#03A9F4", // Cyan
-    "#00BCD4", // Teal
-    "#009688", // Green
-    "#4CAF50", // Light green
-    "#8BC34A", // Lime
-    "#CDDC39", // Yellow green
-    "#FFEB3B", // Bright green
-];
+import { useBeatInput } from "../hooks";
+import animationColors from "../theme/animationColors";
 
 const BeatAnimation = () => {
     const theme = useTheme();
@@ -48,33 +29,16 @@ const BeatAnimation = () => {
     }
 
     const handleEvent = useCallback(() => {
+        console.log("handleEvent");
         const x = randomInt(Math.floor(window.innerWidth * 0.2), Math.floor(window.innerWidth * 0.8));
         const y = randomInt(Math.floor(window.innerHeight * 0.2), Math.floor(window.innerHeight * 0.8));
-        const color = colors[randomInt(0, colors.length - 1)];
+        const color = animationColors[randomInt(0, animationColors.length - 1)];
 
         setCircle({ x, y, color });
         setIsAnimating(true);
     }, []);
 
-    const handleClickRef = useRef((event: MouseEvent) => handleEvent());
-    const handleKeyDownRef = useRef((event: KeyboardEvent) => {
-        if (event.code === "Space") {
-            handleEvent();
-        }
-    });
-
-    useEffect(() => {
-        const handleClick = handleClickRef.current;
-        const handleKeyDown = handleKeyDownRef.current;
-
-        document.addEventListener("click", handleClick);
-        document.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            document.removeEventListener("click", handleClick);
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, [handleEvent]);
+    useBeatInput(handleEvent);
 
     return (
         <Box sx={{
