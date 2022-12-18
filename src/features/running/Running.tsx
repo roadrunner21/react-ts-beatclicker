@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Typography } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector, useBeatInput } from "../../hooks";
 import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
-import { setStartTimestamp } from "./runningSlice";
+import { addUserTimestamp, setStartTimestamp } from "./runningSlice";
 import moment from "moment";
 import BeatAnimation from "../../common/BeatAnimation";
 
@@ -63,6 +63,14 @@ function Running(props: RunningProps) {
         gameLoop();
         effectCalled.current = true;
     }, [gameLoop]);
+
+    const handleInput = useCallback(() => {
+        if (record) {
+            dispatch(addUserTimestamp(moment().unix()));
+        }
+    }, [dispatch, record]);
+
+    useBeatInput(handleInput);
 
     return (
         <>
