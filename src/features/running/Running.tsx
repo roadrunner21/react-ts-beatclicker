@@ -60,7 +60,6 @@ function Running(props: RunningProps) {
         if (effectCalled.current) {
             return;
         }
-        console.log("useeffect");
         gameLoop();
         effectCalled.current = true;
     }, [gameLoop]);
