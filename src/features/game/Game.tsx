@@ -22,7 +22,7 @@ function Game() {
     });
 
     const { mode } = useAppSelector(selectGame);
-    return <Box pt={10}>
+    return <Box>
         {(mode === GAME_LOADING || mode === GAME_READY) && <Start/>}
         {mode === GAME_RUNNING && <Running play={play} setVolume={setVolume}/>}
         {mode === GAME_END && <Results/>}

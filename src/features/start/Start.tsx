@@ -15,7 +15,8 @@ function Start() {
     return <Box
         display={"flex"}
         alignItems={"center"}
-        flexDirection={"column"}>
+        flexDirection={"column"}
+        pt={3}>
         <Typography align={"center"} variant={"h4"} component={"h1"}>
             BeatClicker
         </Typography>

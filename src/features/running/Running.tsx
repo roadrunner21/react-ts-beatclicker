@@ -77,7 +77,7 @@ function Running(props: RunningProps) {
     useBeatInput(handleInput);
 
     return (
-        <Box sx={{ userSelect: "none" }}>
+        <Box sx={{ userSelect: "none", paddingTop: 5 }}>
             <Typography align={"center"} variant={"h5"} component={"h2"}>
                 Match the beat
             </Typography>
