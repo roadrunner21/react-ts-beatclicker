@@ -60,6 +60,15 @@ const themeOptions: ThemeOptions = {
                 },
             },
         },
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    ":visited": {
+                        color: "#FFFFFF",
+                    },
+                },
+            },
+        },
         MuiListItemText: {
             styleOverrides: {
                 root: {
