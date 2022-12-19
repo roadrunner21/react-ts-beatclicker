@@ -28,8 +28,6 @@ function Running(props: RunningProps) {
 
         // time axis
         function tick() {
-            play();
-
             switch (true) {
                 case i <= 5:
                     // Increase volume from 0.2 to 1.0 during the first five iterations
@@ -62,6 +60,7 @@ function Running(props: RunningProps) {
         if (effectCalled.current) {
             return;
         }
+        console.log("useeffect");
         gameLoop();
         effectCalled.current = true;
     }, [gameLoop]);
