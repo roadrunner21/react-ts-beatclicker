@@ -4,10 +4,13 @@ import MenuSidebarButton from "./sidebar/MenuSidebarButton";
 import Logo from "../logo/Logo";
 import DesktopMenu from "./menu/DesktopMenu";
 import SettingsSidebarButton from "./sidebar/SettingsSidebarButton";
+import { useAppSelector } from "../../hooks";
+import { GAME_RUNNING, selectGame } from "../../features/game/gameSlice";
 
 function Header() {
+    const { mode } = useAppSelector(selectGame);
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{ userSelect: mode === GAME_RUNNING ? "none" : "inherit" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{
