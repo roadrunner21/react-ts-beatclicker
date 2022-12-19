@@ -79,15 +79,15 @@ function About() {
             <Typography>
                 Beat Clicker would not have been possible without the help of the following open-source libraries and
                 resources:
-                <ul>
-                    <li><Link href={"https://reactjs.org/"} target="_blank">React</Link></li>
-                    <li><Link href={"https://react-redux.js.org/"} target="_blank">Redux</Link></li>
-                    <li><Link href={"https://mui.com/"} target="_blank">Material UI</Link></li>
-                    <li><Link href={"https://react-chartjs-2.js.org/"} target="_blank">chart.js</Link></li>
-                    <li><Link href={"https://momentjs.com/"} target="_blank">momentjs</Link></li>
-                    <li><Link href={"https://github.com/joshwcomeau/use-sound"} target="_blank">use-sound</Link></li>
-                </ul>
             </Typography>
+            <ul>
+                <li><Link href={"https://reactjs.org/"} target="_blank">React</Link></li>
+                <li><Link href={"https://react-redux.js.org/"} target="_blank">Redux</Link></li>
+                <li><Link href={"https://mui.com/"} target="_blank">Material UI</Link></li>
+                <li><Link href={"https://react-chartjs-2.js.org/"} target="_blank">chart.js</Link></li>
+                <li><Link href={"https://momentjs.com/"} target="_blank">momentjs</Link></li>
+                <li><Link href={"https://github.com/joshwcomeau/use-sound"} target="_blank">use-sound</Link></li>
+            </ul>
         </Container>
     );
 }
