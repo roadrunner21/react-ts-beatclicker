@@ -61,7 +61,9 @@ function BeatBarChart(beatBarChartProps: BeatBarChartProps) {
             x: {
                 title: {
                     display: true,
-                    text: "ms difference",
+                    text: "too early                                             " +
+                        "ms" +
+                        "                                             too late",
                 },
                 ticks: {},
                 min: -highestValue,
