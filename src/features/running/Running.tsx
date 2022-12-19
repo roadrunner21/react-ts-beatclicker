@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector, useBeatInput } from "../../hooks";
 import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
@@ -77,7 +77,7 @@ function Running(props: RunningProps) {
     useBeatInput(handleInput);
 
     return (
-        <>
+        <Box sx={{ userSelect: "none" }}>
             <Typography align={"center"} variant={"h5"} component={"h2"}>
                 Match the beat
             </Typography>
@@ -85,7 +85,7 @@ function Running(props: RunningProps) {
                 {text}
             </Typography>
             <BeatAnimation/>
-        </>
+        </Box>
     );
 }
 
