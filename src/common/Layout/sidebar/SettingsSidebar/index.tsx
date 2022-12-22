@@ -1,5 +1,5 @@
 import React from "react";
-import Settings from "../../../features/settings/Settings";
+import Settings from "../../../../features/settings/Settings";
 import { Box } from "@mui/material";
 
 function SettingsSidebar() {

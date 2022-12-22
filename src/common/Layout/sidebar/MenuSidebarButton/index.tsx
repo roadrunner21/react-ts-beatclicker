@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Drawer } from "@mui/material";
-import SettingsSidebar from "./SettingsSidebar";
-import { Settings as SettingsIcon } from "@mui/icons-material";
+import MenuSidebar from "../MenuSidebar";
 
-function SettingsSidebarButton() {
+function MenuSidebarButton() {
     const [isOpen, setOpen] = useState(false);
 
     // avoid creating a new function on every re-render
@@ -15,21 +15,21 @@ function SettingsSidebarButton() {
         <>
             <IconButton
                 size="large"
-                aria-label="settings sidebar"
-                aria-controls="settings-appbar"
+                aria-label="menu items"
+                aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
                 color="inherit">
-                <SettingsIcon/>
+                <MenuIcon/>
             </IconButton>
             <Drawer
-                anchor="right"
+                anchor="left"
                 open={isOpen}
                 onClose={handleClose}>
-                <SettingsSidebar/>
+                <MenuSidebar/>
             </Drawer>
         </>
     );
 }
 
-export default SettingsSidebarButton;
+export default MenuSidebarButton;

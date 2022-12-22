@@ -1,7 +1,7 @@
 import React from "react";
-import MobileMenu from "../menu/MobileMenu";
-import LogoIcon from "../../logo/LogoIcon";
 import { Box } from "@mui/material";
+import LogoIcon from "../../../LogoIcon";
+import MobileMenu from "../../menu/MobileMenu";
 
 function MenuSidebar() {
     return (

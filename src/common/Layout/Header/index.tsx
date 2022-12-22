@@ -1,11 +1,11 @@
 import React from "react";
 import { AppBar, Box, Container, Toolbar } from "@mui/material";
-import MenuSidebarButton from "./sidebar/MenuSidebarButton";
-import Logo from "../logo/Logo";
-import DesktopMenu from "./menu/DesktopMenu";
-import SettingsSidebarButton from "./sidebar/SettingsSidebarButton";
-import { useAppSelector } from "../../hooks";
-import { GAME_RUNNING, selectGame } from "../../features/game/gameSlice";
+import { useAppSelector } from "../../../hooks";
+import { GAME_RUNNING, selectGame } from "../../../features/game/gameSlice";
+import MenuSidebarButton from "../sidebar/MenuSidebarButton";
+import Logo from "../../Logo";
+import DesktopMenu from "../menu/DesktopMenu";
+import SettingsSidebarButton from "../sidebar/SettingsSidebarButton";
 
 function Header() {
     const { mode } = useAppSelector(selectGame);

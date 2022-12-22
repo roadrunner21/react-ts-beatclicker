@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector, useExpectedTimestamps } from "../../hoo
 import { resetRunning, selectRunning } from "../running/runningSlice";
 import { selectSettings } from "../settings/settingsSlice";
 import { Box, Button, Container, Typography } from "@mui/material";
-import BeatBarChart from "../../common/BeatBarChart";
+import Index from "../../common/BeatBarChart";
 import useScore from "../../hooks/useScore";
 import { GAME_READY, setMode } from "../game/gameSlice";
 
@@ -28,7 +28,7 @@ function Results() {
                 Your score: {score}
             </Typography>
             <Box p={4}>
-                <BeatBarChart expectedTimestamps={expectedTimestamps} differences={differences}/>
+                <Index expectedTimestamps={expectedTimestamps} differences={differences}/>
             </Box>
             <Button onClick={handleTryAgain} sx={{ display: "block", margin: "auto" }} variant={"outlined"}>Try
                 again</Button>
