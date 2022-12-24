@@ -32,4 +32,4 @@ export const setMode = createAction<GameModes>("game/setMode");
 
 export const selectGame = (state: RootState) => state.game;
 
-export default gameSlice.reducer;
+export const gameReducer = gameSlice.reducer;

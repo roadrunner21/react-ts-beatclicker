@@ -28,4 +28,4 @@ function useScore(expectedTimestamps: number[], userTimestamps: number[]) {
     return { differences, totalDifference, score };
 }
 
-export default useScore;
+export { useScore };

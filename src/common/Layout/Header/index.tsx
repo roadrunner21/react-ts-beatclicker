@@ -1,36 +1,36 @@
-import React from "react";
-import { AppBar, Box, Container, Toolbar } from "@mui/material";
-import { useAppSelector } from "../../../hooks";
-import { GAME_RUNNING, selectGame } from "../../../features/game/gameSlice";
-import MenuSidebarButton from "../sidebar/MenuSidebarButton";
-import Logo from "../../Logo";
-import DesktopMenu from "../menu/DesktopMenu";
-import SettingsSidebarButton from "../sidebar/SettingsSidebarButton";
+import React from 'react';
+import { AppBar, Box, Container, Toolbar } from '@mui/material';
+import { useAppSelector } from '../../../hooks';
+import { GAME_RUNNING, selectGame } from '../../../features/game/gameSlice';
+import { Logo } from '../../Logo';
+import { DesktopMenu } from '../menu/DesktopMenu';
+import { MenuSidebarButton } from '../sidebar/MenuSidebarButton';
+import { SettingsSidebarButton } from '../sidebar/SettingsSidebarButton';
 
 function Header() {
     const { mode } = useAppSelector(selectGame);
     return (
-        <AppBar position="static" sx={{ userSelect: mode === GAME_RUNNING ? "none" : "inherit" }}>
+        <AppBar position="static" sx={{ userSelect: mode === GAME_RUNNING ? 'none' : 'inherit' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{
-                        display: { xs: "flex", sm: "none" },
+                        display: { xs: 'flex', sm: 'none' },
                         flexGrow: 1,
                     }}>
                         <MenuSidebarButton/>
                     </Box>
                     <Logo/>
                     <Box sx={{
-                        display: { xs: "none", sm: "flex" },
+                        display: { xs: 'none', sm: 'flex' },
                         flexGrow: 1,
                         marginLeft: 2,
                     }}>
                         <DesktopMenu/>
                     </Box>
                     <Box sx={{
-                        display: "flex",
+                        display: 'flex',
                         flexGrow: 1,
-                        justifyContent: "flex-end",
+                        justifyContent: 'flex-end',
                     }}>
                         <SettingsSidebarButton/>
                     </Box>
@@ -40,4 +40,4 @@ function Header() {
     );
 }
 
-export default Header;
+export { Header };

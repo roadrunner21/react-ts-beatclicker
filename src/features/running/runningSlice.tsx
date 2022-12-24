@@ -33,4 +33,4 @@ export const resetRunning = createAction("running/resetRunning");
 
 export const selectRunning = (state: RootState) => state.running;
 
-export default runningSlice.reducer;
+export const runningReducer = runningSlice.reducer;

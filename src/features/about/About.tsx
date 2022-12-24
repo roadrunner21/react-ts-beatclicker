@@ -92,4 +92,4 @@ function About() {
     );
 }
 
-export default About;
+export { About };

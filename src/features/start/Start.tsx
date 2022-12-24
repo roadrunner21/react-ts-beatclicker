@@ -29,4 +29,4 @@ function Start() {
     </Box>;
 }
 
-export default Start;
+export { Start };

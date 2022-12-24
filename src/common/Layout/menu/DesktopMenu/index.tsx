@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, List, ListItem, ListItemText } from "@mui/material";
-import mainMenu from "../../../../menu/mainMenu";
+import { Link, List, ListItem, ListItemText } from '@mui/material';
+import { mainMenu } from '../../../../menu/mainMenu';
 
 function DesktopMenu() {
     return (
@@ -20,4 +20,4 @@ function DesktopMenu() {
     );
 }
 
-export default DesktopMenu;
+export { DesktopMenu };

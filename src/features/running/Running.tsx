@@ -5,8 +5,8 @@ import { selectSettings } from "../settings/settingsSlice";
 import { PlayFunction } from "use-sound/dist/types";
 import { addUserTimestamp, selectRunning, setStartTimestamp } from "./runningSlice";
 import moment from "moment";
-import Index from "../../common/BeatAnimation";
-import { GAME_END, setMode } from "../game/gameSlice";
+import { GAME_END, setMode } from '../game/gameSlice';
+import { BeatAnimation } from '../../common/BeatAnimation';
 
 export interface RunningProps {
     play: PlayFunction;
@@ -81,12 +81,12 @@ function Running(props: RunningProps) {
             <Typography align={"center"} variant={"h5"} component={"h2"}>
                 Match the beat
             </Typography>
-            <Typography align={"center"} component={"p"}>
+            <Typography align={'center'} component={'p'}>
                 {text}
             </Typography>
-            <Index/>
+            <BeatAnimation/>
         </Box>
     );
 }
 
-export default Running;
+export { Running };

@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { Page } from "../pages/types";
-import NoMatch from "../common/NoMatch";
-import Layout from "../common/Layout";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Page } from '../pages/types';
+import { NoMatch } from '../common/NoMatch';
+import { Layout } from '../common/Layout';
 
 interface RouteHandlerProps {
     routes: Array<Page>;
@@ -21,4 +21,4 @@ function RouteHandler(props: RouteHandlerProps) {
     );
 }
 
-export default RouteHandler;
+export { RouteHandler };

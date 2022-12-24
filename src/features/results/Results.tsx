@@ -2,10 +2,10 @@ import React from "react";
 import { useAppDispatch, useAppSelector, useExpectedTimestamps } from "../../hooks";
 import { resetRunning, selectRunning } from "../running/runningSlice";
 import { selectSettings } from "../settings/settingsSlice";
-import { Box, Button, Container, Typography } from "@mui/material";
-import Index from "../../common/BeatBarChart";
-import useScore from "../../hooks/useScore";
-import { GAME_READY, setMode } from "../game/gameSlice";
+import { Box, Button, Container, Typography } from '@mui/material';
+import { useScore } from '../../hooks/useScore';
+import { GAME_READY, setMode } from '../game/gameSlice';
+import { BeatBarChart } from '../../common/BeatBarChart';
 
 function Results() {
     const { userTimestamps, startTimestamp } = useAppSelector(selectRunning);
@@ -28,7 +28,7 @@ function Results() {
                 Your score: {score}
             </Typography>
             <Box p={4}>
-                <Index expectedTimestamps={expectedTimestamps} differences={differences}/>
+                <BeatBarChart expectedTimestamps={expectedTimestamps} differences={differences}/>
             </Box>
             <Button onClick={handleTryAgain} sx={{ display: "block", margin: "auto" }} variant={"outlined"}>Try
                 again</Button>
@@ -36,4 +36,4 @@ function Results() {
     );
 }
 
-export default Results;
+export { Results };

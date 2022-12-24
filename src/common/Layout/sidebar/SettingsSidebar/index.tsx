@@ -1,6 +1,6 @@
-import React from "react";
-import Settings from "../../../../features/settings/Settings";
-import { Box } from "@mui/material";
+import React from 'react';
+import { Settings } from '../../../../features/settings/Settings';
+import { Box } from '@mui/material';
 
 function SettingsSidebar() {
     return (
@@ -10,4 +10,4 @@ function SettingsSidebar() {
     );
 }
 
-export default SettingsSidebar;
+export { SettingsSidebar };

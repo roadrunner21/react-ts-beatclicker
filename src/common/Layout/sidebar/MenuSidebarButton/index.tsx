@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Drawer } from "@mui/material";
-import MenuSidebar from "../MenuSidebar";
+import { Drawer } from '@mui/material';
+import { MenuSidebar } from '../MenuSidebar';
 
 function MenuSidebarButton() {
     const [isOpen, setOpen] = useState(false);
@@ -32,4 +32,4 @@ function MenuSidebarButton() {
     );
 }
 
-export default MenuSidebarButton;
+export { MenuSidebarButton };

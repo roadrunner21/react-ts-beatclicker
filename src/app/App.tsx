@@ -1,6 +1,6 @@
-import React from "react";
-import RouteHandler from "./RouteHandler";
-import Routes from "../pages/index";
+import React from 'react';
+import { RouteHandler } from './RouteHandler';
+import { Routes } from '../pages';
 
 function App() {
 
@@ -11,4 +11,4 @@ function App() {
     );
 }
 
-export default App;
+export { App };

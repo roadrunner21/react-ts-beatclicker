@@ -28,4 +28,4 @@ const useBeatInput = (
     }, [onBeatInput, element]);
 };
 
-export default useBeatInput;
+export { useBeatInput };

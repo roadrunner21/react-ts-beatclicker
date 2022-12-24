@@ -23,4 +23,4 @@ export const setBpm = createAction<SettingsState["bpm"]>("settings/setBpm");
 
 export const selectSettings = (state: RootState) => state.settings;
 
-export default settingsSlice.reducer;
+export const settingsReducer = settingsSlice.reducer;

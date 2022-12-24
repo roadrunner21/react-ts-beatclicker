@@ -18,4 +18,4 @@ function useExpectedTimestamps(
     }, [startTimestamp, bpm, iterations]);
 }
 
-export default useExpectedTimestamps;
+export { useExpectedTimestamps };

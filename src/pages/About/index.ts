@@ -1,5 +1,5 @@
-import AboutContent from "../../features/about/About";
-import { ACCESS_TYPE_ALL } from "../const";
+import { About as AboutContent } from '../../features/about/About';
+import { ACCESS_TYPE_ALL } from '../const';
 import { PathPage } from "../types";
 
 const About: PathPage = {
@@ -10,4 +10,4 @@ const About: PathPage = {
     access: ACCESS_TYPE_ALL,
 };
 
-export default About;
+export { About };

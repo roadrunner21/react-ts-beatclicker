@@ -19,4 +19,4 @@ const animationColors = [
     "#FFEB3B", // Bright green
 ];
 
-export default animationColors;
+export { animationColors };

@@ -1,6 +1,6 @@
 import { ACCESS_TYPE_ALL } from "../const";
-import { PathPage } from "../types";
-import SettingsContent from "../../features/settings/Settings";
+import { PathPage } from '../types';
+import { Settings as SettingsContent } from '../../features/settings/Settings';
 
 const Settings: PathPage = {
     path: "/settings",
@@ -10,4 +10,4 @@ const Settings: PathPage = {
     access: ACCESS_TYPE_ALL,
 };
 
-export default Settings;
+export { Settings };

@@ -82,4 +82,4 @@ function BeatBarChart(beatBarChartProps: BeatBarChartProps) {
     );
 }
 
-export default BeatBarChart;
+export { BeatBarChart };
