@@ -6,7 +6,7 @@ import { PlayFunction } from "use-sound/dist/types";
 import { addUserTimestamp, selectRunning, setStartTimestamp } from "./runningSlice";
 import moment from "moment";
 import { GAME_END, setMode } from '../game/gameSlice';
-import { BeatAnimation } from '../../common/BeatAnimation';
+import { BeatAnimation } from '../../common';
 
 export interface RunningProps {
     play: PlayFunction;

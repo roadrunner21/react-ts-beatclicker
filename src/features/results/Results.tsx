@@ -5,7 +5,7 @@ import { selectSettings } from "../settings/settingsSlice";
 import { Box, Button, Container, Typography } from '@mui/material';
 import { useScore } from '../../hooks/useScore';
 import { GAME_READY, setMode } from '../game/gameSlice';
-import { BeatBarChart } from '../../common/BeatBarChart';
+import { BeatBarChart } from '../../common';
 
 function Results() {
     const { userTimestamps, startTimestamp } = useAppSelector(selectRunning);

@@ -8,4 +8,4 @@ const Routes = [
     Settings,
 ];
 
-export { Routes };
+export { Home, About, Settings, Routes };
