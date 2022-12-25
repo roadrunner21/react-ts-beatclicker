@@ -1,7 +1,7 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import { Settings as SettingsIcon } from '@mui/icons-material';
-import { Settings as SettingsPage } from '../../pages';
+import { Settings as SettingsPage } from '../../lib/pages';
 
 function SettingsButton() {
     return (

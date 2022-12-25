@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, List, ListItem, ListItemText } from '@mui/material';
-import { mainMenu } from '../../../../menu/mainMenu';
+import { mainMenu } from '../../../../lib/menu/mainMenu';
 
 function MobileMenu() {
     return (

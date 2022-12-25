@@ -1,4 +1,4 @@
-import { About as AboutContent } from '../../features/about/About';
+import { About as AboutContent } from '../../../features/about/About';
 import { ACCESS_TYPE_ALL } from '../const';
 import { PathPage } from "../types";
 

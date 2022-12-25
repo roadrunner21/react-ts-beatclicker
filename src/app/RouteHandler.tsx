@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Page } from '../pages/types';
+import { Page } from '../lib/pages/types';
 import { Layout, NoMatch } from '../common';
 
 interface RouteHandlerProps {
