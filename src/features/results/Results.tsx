@@ -2,10 +2,10 @@ import React from "react";
 import { useAppDispatch, useAppSelector, useExpectedTimestamps } from "../../hooks";
 import { resetRunning, selectRunning } from "../running/runningSlice";
 import { selectSettings } from "../settings/settingsSlice";
-import { Box, Button, Container, Typography } from '@mui/material';
-import { useScore } from '../../hooks/useScore';
-import { GAME_READY, setMode } from '../game/gameSlice';
-import { BeatBarChart } from '../../common';
+import { Box, Button, Container, Typography } from "@mui/material";
+import { useScore } from "../../hooks/useScore";
+import { GAME_READY, setMode } from "../game/gameSlice";
+import { BeatBarChart } from "../../common";
 
 function Results() {
     const { userTimestamps, startTimestamp } = useAppSelector(selectRunning);
@@ -21,17 +21,27 @@ function Results() {
 
     return (
         <Container>
-            <Typography align={"center"} variant={"h3"} gutterBottom>
+            <Typography align={"center"}
+                        variant={"h3"}
+                        gutterBottom>
                 Results
             </Typography>
-            <Typography align={"center"} variant={"h4"}>
-                Your score: {score}
+            <Typography align={"center"}
+                        variant={"h4"}>
+                Your score:
+                {" "}
+                {score}
             </Typography>
             <Box p={4}>
-                <BeatBarChart expectedTimestamps={expectedTimestamps} differences={differences}/>
+                <BeatBarChart expectedTimestamps={expectedTimestamps}
+                              differences={differences}/>
             </Box>
-            <Button onClick={handleTryAgain} sx={{ display: "block", margin: "auto" }} variant={"outlined"}>Try
-                again</Button>
+            <Button onClick={handleTryAgain}
+                    sx={{ display: "block", margin: "auto" }}
+                    variant={"outlined"}>
+                Try
+                again
+            </Button>
         </Container>
     );
 }

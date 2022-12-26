@@ -1,4 +1,5 @@
-import { createTheme, ThemeOptions } from "@mui/material";
+import type { ThemeOptions } from "@mui/material";
+import { createTheme } from "@mui/material";
 
 export const darkBlue = {
     50: "#e4e4e7",

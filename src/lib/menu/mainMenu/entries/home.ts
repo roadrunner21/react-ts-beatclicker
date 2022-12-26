@@ -1,5 +1,5 @@
-import { Home as HomePage } from '../../../pages';
-import { MenuEntry } from '../../types';
+import { Home as HomePage } from "../../../pages";
+import type { MenuEntry } from "../../types";
 
 const home: MenuEntry = {
     name: "Home",

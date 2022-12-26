@@ -1,5 +1,6 @@
-import { createAction, createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
-import { RootState } from "../../app/store";
+import type { PayloadAction, Slice } from "@reduxjs/toolkit";
+import { createAction, createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "../../app/store";
 
 export type Timestamp = number;
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { MusicNote } from '@mui/icons-material';
+import React from "react";
+import { MusicNote } from "@mui/icons-material";
 
 function LogoIcon() {
     return (

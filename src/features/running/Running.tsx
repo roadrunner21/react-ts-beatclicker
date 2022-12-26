@@ -2,11 +2,11 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector, useBeatInput } from "../../hooks";
 import { selectSettings } from "../settings/settingsSlice";
-import { PlayFunction } from "use-sound/dist/types";
+import type { PlayFunction } from "use-sound/dist/types";
 import { addUserTimestamp, selectRunning, setStartTimestamp } from "./runningSlice";
 import moment from "moment";
-import { GAME_END, setMode } from '../game/gameSlice';
-import { BeatAnimation } from '../../common';
+import { GAME_END, setMode } from "../game/gameSlice";
+import { BeatAnimation } from "../../common";
 
 export interface RunningProps {
     play: PlayFunction;
@@ -78,10 +78,13 @@ function Running(props: RunningProps) {
 
     return (
         <Box sx={{ userSelect: "none", paddingTop: 5 }}>
-            <Typography align={"center"} variant={"h5"} component={"h2"}>
+            <Typography align={"center"}
+                        variant={"h5"}
+                        component={"h2"}>
                 Match the beat
             </Typography>
-            <Typography align={'center'} component={'p'}>
+            <Typography align={"center"}
+                        component={"p"}>
                 {text}
             </Typography>
             <BeatAnimation/>

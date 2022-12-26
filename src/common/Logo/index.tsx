@@ -1,13 +1,13 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
-import { LogoIcon } from '../LogoIcon';
+import React from "react";
+import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
+import { LogoIcon } from "../LogoIcon";
 
 function Logo() {
     return (
         <Box sx={{
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
         }}
         >
             <LogoIcon/>
@@ -19,10 +19,10 @@ function Logo() {
                 color="inherit"
                 sx={{
                     ml: 1,
-                    fontFamily: 'monospace',
+                    fontFamily: "monospace",
                     fontWeight: 700,
-                    letterSpacing: '.3rem',
-                    textDecoration: 'none',
+                    letterSpacing: ".3rem",
+                    textDecoration: "none",
                 }}
             >
                 BEATCLICKER

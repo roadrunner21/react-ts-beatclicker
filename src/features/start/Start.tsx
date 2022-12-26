@@ -17,14 +17,20 @@ function Start() {
         alignItems={"center"}
         flexDirection={"column"}
         pt={3}>
-        <Typography align={"center"} variant={"h4"} component={"h1"}>
+        <Typography align={"center"}
+                    variant={"h4"}
+                    component={"h1"}>
             BeatClicker
         </Typography>
-        <Typography align={"center"} variant={"h5"} component={"h2"}>
+        <Typography align={"center"}
+                    variant={"h5"}
+                    component={"h2"}>
             Tap to the beat
         </Typography>
-        <IconButton disabled={mode === GAME_LOADING} onClick={startGame}>
-            <PlayArrow color={mode === GAME_LOADING ? "disabled" : "primary"} sx={{ fontSize: "10rem" }}/>
+        <IconButton disabled={mode === GAME_LOADING}
+                    onClick={startGame}>
+            <PlayArrow color={mode === GAME_LOADING ? "disabled" : "primary"}
+                       sx={{ fontSize: "10rem" }}/>
         </IconButton>
     </Box>;
 }

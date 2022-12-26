@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { Box, useTheme } from "@mui/material";
-import { useBeatInput } from '../../hooks';
-import { animationColors } from '../../theme/animationColors';
+import { useBeatInput } from "../../hooks";
+import { animationColors } from "../../theme/animationColors";
 
 const BeatAnimation = () => {
     const theme = useTheme();

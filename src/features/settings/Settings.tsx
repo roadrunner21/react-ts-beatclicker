@@ -15,7 +15,9 @@ const Settings = () => {
 
     return (
         <>
-            <Typography component={"p"} variant={"h5"} gutterBottom>
+            <Typography component={"p"}
+                        variant={"h5"}
+                        gutterBottom>
                 Settings
             </Typography>
             <Divider/>

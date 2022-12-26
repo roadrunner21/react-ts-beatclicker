@@ -1,9 +1,10 @@
-import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import { gameReducer } from '../features/game/gameSlice';
-import { selectSettings, settingsReducer } from '../features/settings/settingsSlice';
-import { runningReducer } from '../features/running/runningSlice';
+import type { Action, ThunkAction } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { gameReducer } from "../features/game/gameSlice";
+import { selectSettings, settingsReducer } from "../features/settings/settingsSlice";
+import { runningReducer } from "../features/running/runningSlice";
 
-const item = localStorage.getItem('reduxState');
+const item = localStorage.getItem("reduxState");
 const preloadedState = item !== null ? JSON.parse(item) : {};
 
 export const store = configureStore({

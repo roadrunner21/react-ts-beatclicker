@@ -1,5 +1,5 @@
-import { About as AboutPage } from '../../../pages';
-import { MenuEntry } from '../../types';
+import { About as AboutPage } from "../../../pages";
+import type { MenuEntry } from "../../types";
 
 const about: MenuEntry = {
     name: "About",

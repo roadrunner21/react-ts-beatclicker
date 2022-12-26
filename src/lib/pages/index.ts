@@ -1,6 +1,6 @@
-import { Home } from './Home';
-import { About } from './About';
-import { Settings } from './Settings';
+import { About } from "./About";
+import { Home } from "./Home";
+import { Settings } from "./Settings";
 
 const Routes = [
     Home,
@@ -8,4 +8,4 @@ const Routes = [
     Settings,
 ];
 
-export { Home, About, Settings, Routes };
+export { About, Home, Routes, Settings };

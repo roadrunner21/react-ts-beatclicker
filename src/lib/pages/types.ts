@@ -1,5 +1,5 @@
 import { ACCESS_TYPE_ALL } from "./const";
-import React from "react";
+import type React from "react";
 
 const accessTypeNames = [ACCESS_TYPE_ALL] as const;
 

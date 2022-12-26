@@ -78,7 +78,8 @@ function BeatBarChart(beatBarChartProps: BeatBarChartProps) {
         },
     };
     return (
-        <Bar options={options} data={data}/>
+        <Bar options={options}
+             data={data}/>
     );
 }
 

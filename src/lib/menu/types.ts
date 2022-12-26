@@ -1,4 +1,4 @@
-import { Page } from "../pages/types";
+import type { Page } from "../pages/types";
 
 export interface MenuEntry {
     name: string,

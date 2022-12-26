@@ -1,11 +1,7 @@
 import { useMemo } from "react";
 
 function useScore(expectedTimestamps: number[], userTimestamps: number[]) {
-    const differences = useMemo(() => {
-        return expectedTimestamps.map((expectedTimestamp, index) => {
-            return userTimestamps[index] - expectedTimestamp;
-        });
-    }, [expectedTimestamps, userTimestamps]);
+    const differences = useMemo(() => expectedTimestamps.map((expectedTimestamp, index) => userTimestamps[index] - expectedTimestamp), [expectedTimestamps, userTimestamps]);
 
     const totalDifference = useMemo(() => {
         let totalDifference = 0;

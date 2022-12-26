@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import { About } from './About';
+import { render, screen } from "@testing-library/react";
+import { About } from "./About";
 
 describe("About component", () => {
     test("renders headline", () => {
         render(<About/>);
-        expect(screen.getByText(`About Beat Clicker`)).toBeInTheDocument();
+        expect(screen.getByText("About Beat Clicker")).toBeInTheDocument();
     });
 
     test("renders score algorithm section", () => {

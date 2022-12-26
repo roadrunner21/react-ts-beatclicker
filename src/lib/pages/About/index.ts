@@ -1,6 +1,6 @@
-import { About as AboutContent } from '../../../features/about/About';
-import { ACCESS_TYPE_ALL } from '../const';
-import { PathPage } from "../types";
+import { About as AboutContent } from "../../../features/about/About";
+import { ACCESS_TYPE_ALL } from "../const";
+import type { PathPage } from "../types";
 
 const About: PathPage = {
     path: "/about",

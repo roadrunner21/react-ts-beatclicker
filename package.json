@@ -44,15 +44,46 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext .ts,.tsx ."
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ],
+    "plugins": [
+      "simple-import-sort"
+    ],
     "rules": {
-      "import/no-default-export": "error"
+      "@typescript-eslint/consistent-type-imports": "error",
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "quotes": [
+        "error",
+        "double",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "import/no-default-export": "error",
+      "import/no-extraneous-dependencies": "error",
+      "simple-import-sort/exports": "error",
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      ],
+      "react/jsx-one-expression-per-line": "error",
+      "react/jsx-max-props-per-line": "error"
     }
   },
   "browserslist": {
@@ -68,6 +99,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "gh-pages": "^4.0.0"
   }
 }
