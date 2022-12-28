@@ -1,6 +1,6 @@
-import { ACCESS_TYPE_ALL } from "../const";
+import {Game} from "../../../features/game/Game";
+import {ACCESS_TYPE_ALL} from "../const";
 import type { IndexPage } from "../types";
-import { Game } from "../../../features/game/Game";
 
 const Home: IndexPage = {
     index: true,

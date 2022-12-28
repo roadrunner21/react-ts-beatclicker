@@ -1,6 +1,6 @@
 import React from "react";
-import { Settings } from "../../../../features/settings/Settings";
-import { Box } from "@mui/material";
+import {Box} from "@mui/material";
+import {Settings} from "../../../../features/settings/Settings";
 
 function SettingsSidebar() {
     return (

@@ -1,6 +1,6 @@
-import { ACCESS_TYPE_ALL } from "../const";
+import {Settings as SettingsContent} from "../../../features/settings/Settings";
+import {ACCESS_TYPE_ALL} from "../const";
 import type { PathPage } from "../types";
-import { Settings as SettingsContent } from "../../../features/settings/Settings";
 
 const Settings: PathPage = {
     path: "/settings",

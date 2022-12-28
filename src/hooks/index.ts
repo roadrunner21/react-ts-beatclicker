@@ -1,12 +1,12 @@
-import type { TypedUseSelectorHook } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
-import type { AppDispatch, RootState } from "../app/store";
-import { useBeatInput } from "./useBeatInput";
-import { useExpectedTimestamps } from "./useExpectedTimestamps";
+import {useDispatch, useSelector} from "react-redux";
+import {useBeatInput} from "./useBeatInput";
+import {useExpectedTimestamps} from "./useExpectedTimestamps";
+import type {AppDispatch, RootState} from "../app/store";
+import type {TypedUseSelectorHook} from "react-redux";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 const useAppDispatch = () => useDispatch<AppDispatch>();
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 // export all hooks
-export { useAppDispatch, useAppSelector, useBeatInput, useExpectedTimestamps };
+export {useAppDispatch, useAppSelector, useBeatInput, useExpectedTimestamps};

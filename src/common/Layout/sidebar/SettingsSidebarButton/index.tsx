@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React, {useCallback, useState} from "react";
+import {Settings as SettingsIcon} from "@mui/icons-material";
+import {Drawer} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import { Drawer } from "@mui/material";
-import { Settings as SettingsIcon } from "@mui/icons-material";
-import { SettingsSidebar } from "../SettingsSidebar";
+import {SettingsSidebar} from "../SettingsSidebar";
 
 function SettingsSidebarButton() {
     const [isOpen, setOpen] = useState(false);

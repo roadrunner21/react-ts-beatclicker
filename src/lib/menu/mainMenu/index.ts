@@ -1,7 +1,7 @@
-import type { Menu } from "../types";
-import { home } from "./entries/home";
-import { about } from "./entries/about";
+import {about} from "./entries/about";
+import {home} from "./entries/home";
+import type {Menu} from "../types";
 
 const mainMenu: Menu = [home, about];
 
-export { mainMenu };
+export {mainMenu};

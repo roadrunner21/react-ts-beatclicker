@@ -1,8 +1,8 @@
 import React from "react";
 import { AppBar, Box, Container, Toolbar } from "@mui/material";
-import { useAppSelector } from "../../../hooks";
-import { GAME_RUNNING, selectGame } from "../../../features/game/gameSlice";
-import { Logo } from "../../Logo";
+import {GAME_RUNNING, selectGame} from "../../../features/game/gameSlice";
+import {useAppSelector} from "../../../hooks";
+import {Logo} from "../../Logo";
 import { DesktopMenu } from "../menu/DesktopMenu";
 import { MenuSidebarButton } from "../sidebar/MenuSidebarButton";
 import { SettingsSidebarButton } from "../sidebar/SettingsSidebarButton";

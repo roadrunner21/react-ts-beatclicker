@@ -1,6 +1,6 @@
-import type { PayloadAction, Slice } from "@reduxjs/toolkit";
 import { createAction, createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../../app/store";
+import type {RootState} from "../../app/store";
+import type {PayloadAction, Slice} from "@reduxjs/toolkit";
 
 export const GAME_LOADING = "GAME_LOADING";
 export const GAME_READY = "GAME_READY";

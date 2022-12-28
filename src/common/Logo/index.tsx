@@ -1,7 +1,7 @@
 import React from "react";
+import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
-import { LogoIcon } from "../LogoIcon";
+import {LogoIcon} from "../LogoIcon";
 
 function Logo() {
     return (

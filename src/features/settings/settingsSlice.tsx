@@ -1,6 +1,6 @@
-import type { PayloadAction, Slice } from "@reduxjs/toolkit";
 import { createAction, createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../../app/store";
+import type {RootState} from "../../app/store";
+import type {PayloadAction, Slice} from "@reduxjs/toolkit";
 
 export interface SettingsState {
     bpm: number;

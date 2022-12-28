@@ -1,12 +1,12 @@
-import { Box, IconButton, Typography } from "@mui/material";
-import { PlayArrow } from "@mui/icons-material";
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { GAME_LOADING, GAME_RUNNING, selectGame, setMode } from "../game/gameSlice";
+import {PlayArrow} from "@mui/icons-material";
+import {Box, IconButton, Typography} from "@mui/material";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {GAME_LOADING, GAME_RUNNING, selectGame, setMode} from "../game/gameSlice";
 
 function Start() {
     const dispatch = useAppDispatch();
-    const { mode } = useAppSelector(selectGame);
+    const {mode} = useAppSelector(selectGame);
 
     const startGame = () => {
         dispatch(setMode(GAME_RUNNING));

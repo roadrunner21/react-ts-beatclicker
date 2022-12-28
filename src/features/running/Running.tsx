@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Box, Typography } from "@mui/material";
-import { useAppDispatch, useAppSelector, useBeatInput } from "../../hooks";
-import { selectSettings } from "../settings/settingsSlice";
-import type { PlayFunction } from "use-sound/dist/types";
-import { addUserTimestamp, selectRunning, setStartTimestamp } from "./runningSlice";
+import React, {useCallback, useEffect, useRef, useState} from "react";
+import {Box, Typography} from "@mui/material";
 import moment from "moment";
-import { GAME_END, setMode } from "../game/gameSlice";
-import { BeatAnimation } from "../../common";
+import {BeatAnimation} from "../../common";
+import {useAppDispatch, useAppSelector, useBeatInput} from "../../hooks";
+import {GAME_END, setMode} from "../game/gameSlice";
+import {selectSettings} from "../settings/settingsSlice";
+import {addUserTimestamp, selectRunning, setStartTimestamp} from "./runningSlice";
+import type {PlayFunction} from "use-sound/dist/types";
 
 export interface RunningProps {
     play: PlayFunction;

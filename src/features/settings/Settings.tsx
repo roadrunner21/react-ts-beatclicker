@@ -1,11 +1,11 @@
-import React, { useCallback } from "react";
+import React, {useCallback} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Box, Divider, TextField} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { Box, Divider, TextField } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { selectSettings, setBpm } from "./settingsSlice";
+import {selectSettings, setBpm} from "./settingsSlice";
 
 const Settings = () => {
-    const { bpm } = useSelector(selectSettings);
+    const {bpm} = useSelector(selectSettings);
     const dispatch = useDispatch();
 
     // avoid creating a new function on every re-render
