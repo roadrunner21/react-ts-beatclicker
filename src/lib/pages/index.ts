@@ -1,11 +1,4 @@
-import { About } from "./About";
-import { Home } from "./Home";
-import { Settings } from "./Settings";
-
-const Routes = [
-    Home,
-    About,
-    Settings,
-];
-
-export { About, Home, Routes, Settings };
+export {About} from "./About";
+export {Home} from "./Home";
+export {routes} from "./routes";
+export {Settings} from "./Settings";

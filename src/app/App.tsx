@@ -1,14 +1,14 @@
 import React from "react";
-import { RouteHandler } from "./RouteHandler";
-import { Routes } from "../lib/pages";
+import {routes} from "../lib/pages";
+import {RouteHandler} from "./RouteHandler";
 
 function App() {
 
     return (
         <>
-            <RouteHandler routes={Routes}/>
+            <RouteHandler routes={routes}/>
         </>
     );
 }
 
-export { App };
+export {App};
