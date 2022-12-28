@@ -1,21 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import type { Page } from "../lib/pages/types";
-import { Layout, NoMatch } from "../common";
+import {Layout, NoMatch} from "../common";
+import {routes} from "../lib/pages";
 
-interface RouteHandlerProps {
-    routes: Array<Page>;
-}
-
-function RouteHandler(props: RouteHandlerProps) {
+function RouteHandler() {
     return (
         <Routes>
             <Route path="/"
                    element={<Layout/>}>
-                {props.routes.map((route, i) => <Route key={i}
-                                                       index={route.index}
-                                                       path={route.path}
-                                                       element={<route.Component/>}/>)}
+                {routes.map((route, i) => <Route key={i}
+                                                 index={route.index}
+                                                 path={route.path}
+                                                 element={<route.Component/>}/>)}
                 <Route path="*"
                        element={<NoMatch/>}/>
             </Route>
