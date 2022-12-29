@@ -1,10 +1,10 @@
-import { useCallback, useState } from "react";
-import { animated, useSpring } from "react-spring";
+import {memo, useCallback, useState} from "react";
+import {animated, useSpring} from "react-spring";
 import { Box, useTheme } from "@mui/material";
 import { useBeatInput } from "../../hooks";
 import { animationColors } from "../../theme/animationColors";
 
-const BeatAnimation = () => {
+const BeatAnimation = memo(() => {
     const theme = useTheme();
     const [isAnimating, setIsAnimating] = useState(false);
     const [circle, setCircle] = useState({
@@ -55,6 +55,6 @@ const BeatAnimation = () => {
             </animated.div>
         </Box>
     );
-};
+});
 
 export { BeatAnimation };
