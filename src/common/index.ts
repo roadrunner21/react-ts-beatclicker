@@ -11,4 +11,3 @@ export { SettingsSidebarButton } from "./Layout/sidebar/SettingsSidebarButton";
 export { Logo } from "./Logo";
 export { LogoIcon } from "./LogoIcon";
 export { NoMatch } from "./NoMatch";
-export { SettingsButton } from "./SettingsButton";
