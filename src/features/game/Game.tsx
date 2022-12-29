@@ -3,10 +3,10 @@ import {Box} from "@mui/material";
 import useSound from "use-sound";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {Results} from "../results/Results";
-import kick from "../running/KICK01.wav";
 import {Running} from "../running/Running";
 import {Start} from "../start/Start";
 import {GAME_END, GAME_LOADING, GAME_READY, GAME_RUNNING, selectGame, setMode} from "./gameSlice";
+import kick from "./KICK01.wav";
 
 function Game() {
     const dispatch = useAppDispatch();
