@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {memo, useCallback, useEffect, useRef, useState} from "react";
 import {Box, Typography} from "@mui/material";
 import moment from "moment";
 import {BeatAnimation} from "../../common";
@@ -13,11 +13,11 @@ export interface RunningProps {
     setVolume: (volume: number) => void;
 }
 
-function Running(props: RunningProps) {
+const Running = memo((props: RunningProps) => {
     const dispatch = useAppDispatch();
-    const { bpm } = useAppSelector(selectSettings);
-    const { userTimestamps } = useAppSelector(selectRunning);
-    const { play, setVolume } = props;
+    const {bpm} = useAppSelector(selectSettings);
+    const {userTimestamps} = useAppSelector(selectRunning);
+    const {play, setVolume} = props;
     const [text, setText] = useState("Get ready...");
     const [record, setRecord] = useState(false);
     // using a ref to ensure useEffect gameLoop hook only runs once even in strictMode
@@ -77,7 +77,7 @@ function Running(props: RunningProps) {
     useBeatInput(handleInput);
 
     return (
-        <Box sx={{ userSelect: "none", paddingTop: 5 }}>
+        <Box sx={{userSelect: "none", paddingTop: 5}}>
             <Typography align={"center"}
                         variant={"h5"}
                         component={"h2"}>
@@ -90,6 +90,6 @@ function Running(props: RunningProps) {
             <BeatAnimation/>
         </Box>
     );
-}
+});
 
-export { Running };
+export {Running};
