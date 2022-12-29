@@ -1,17 +1,20 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import {Box} from "@mui/material";
+import {Footer} from "./Footer";
 import {Header} from "./Header";
 
 function Layout() {
     return (
         <>
             <Header/>
-            <Box py={3}>
+            <Box flex={1}
+                 py={3}>
                 <Outlet/>
             </Box>
+            <Footer/>
         </>
     );
 }
 
-export { Layout };
+export {Layout};
