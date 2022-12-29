@@ -1,6 +1,6 @@
 import React from "react";
 import {AppBar, Box, Container, Toolbar} from "@mui/material";
-import {GAME_RUNTIME, selectGame} from "../../../features/game/gameSlice";
+import {GAME_END, GAME_RUNTIME, selectGame} from "../../../features/game/gameSlice";
 import {useAppSelector} from "../../../hooks";
 import {Logo} from "../../Logo";
 import { DesktopMenu } from "../menu/DesktopMenu";
@@ -33,7 +33,7 @@ function Header() {
                         flexGrow: 1,
                         justifyContent: "flex-end",
                     }}>
-                        <SettingsSidebarButton/>
+                        <SettingsSidebarButton disabled={!(mode === GAME_RUNTIME || mode === GAME_END)}/>
                     </Box>
                 </Toolbar>
             </Container>

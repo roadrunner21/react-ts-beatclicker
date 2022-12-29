@@ -4,7 +4,11 @@ import {Drawer} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import {SettingsSidebar} from "../SettingsSidebar";
 
-function SettingsSidebarButton() {
+interface SettingsSidebarButtonProps {
+    disabled: boolean;
+}
+
+function SettingsSidebarButton(props: SettingsSidebarButtonProps) {
     const [isOpen, setOpen] = useState(false);
 
     // avoid creating a new function on every re-render
@@ -19,6 +23,7 @@ function SettingsSidebarButton() {
                 aria-controls="settings-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
+                disabled={props.disabled}
                 color="inherit">
                 <SettingsIcon/>
             </IconButton>
