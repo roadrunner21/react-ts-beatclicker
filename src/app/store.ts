@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {gameReducer} from "../features/game/gameSlice";
-import {runningReducer} from "../features/running/runningSlice";
+import {runtimeReducer} from "../features/runtime/runtimeSlice";
 import {selectSettings, settingsReducer} from "../features/settings/settingsSlice";
 import type {Action, ThunkAction} from "@reduxjs/toolkit";
 
@@ -11,7 +11,7 @@ export const store = configureStore({
     reducer: {
         game: gameReducer,
         settings: settingsReducer,
-        running: runningReducer,
+        runtime: runtimeReducer,
     },
     preloadedState,
 });

@@ -4,10 +4,10 @@ import type {PayloadAction, Slice} from "@reduxjs/toolkit";
 
 export const GAME_LOADING = "GAME_LOADING";
 export const GAME_READY = "GAME_READY";
-export const GAME_RUNNING = "GAME_RUNNING";
+export const GAME_RUNTIME = "GAME_RUNTIME";
 export const GAME_END = "GAME_END";
 
-const gameModeNames = [GAME_LOADING, GAME_READY, GAME_RUNNING, GAME_END] as const;
+const gameModeNames = [GAME_LOADING, GAME_READY, GAME_RUNTIME, GAME_END] as const;
 
 export type GameModes = typeof gameModeNames[number];
 

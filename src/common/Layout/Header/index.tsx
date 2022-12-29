@@ -1,6 +1,6 @@
 import React from "react";
-import { AppBar, Box, Container, Toolbar } from "@mui/material";
-import {GAME_RUNNING, selectGame} from "../../../features/game/gameSlice";
+import {AppBar, Box, Container, Toolbar} from "@mui/material";
+import {GAME_RUNTIME, selectGame} from "../../../features/game/gameSlice";
 import {useAppSelector} from "../../../hooks";
 import {Logo} from "../../Logo";
 import { DesktopMenu } from "../menu/DesktopMenu";
@@ -11,11 +11,11 @@ function Header() {
     const { mode } = useAppSelector(selectGame);
     return (
         <AppBar position="static"
-                sx={{ userSelect: mode === GAME_RUNNING ? "none" : "inherit" }}>
+                sx={{userSelect: mode === GAME_RUNTIME ? "none" : "inherit"}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{
-                        display: { xs: "flex", sm: "none" },
+                        display: {xs: "flex", sm: "none"},
                         flexGrow: 1,
                     }}>
                         <MenuSidebarButton/>

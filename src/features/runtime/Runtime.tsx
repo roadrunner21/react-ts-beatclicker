@@ -5,18 +5,18 @@ import {BeatAnimation} from "../../common";
 import {useAppDispatch, useAppSelector, useBeatInput} from "../../hooks";
 import {GAME_END, setMode} from "../game/gameSlice";
 import {selectSettings} from "../settings/settingsSlice";
-import {addUserTimestamp, selectRunning, setStartTimestamp} from "./runningSlice";
+import {addUserTimestamp, selectRuntime, setStartTimestamp} from "./runtimeSlice";
 import type {PlayFunction} from "use-sound/dist/types";
 
-export interface RunningProps {
+export interface RuntimeProps {
     play: PlayFunction;
     setVolume: (volume: number) => void;
 }
 
-const Running = memo((props: RunningProps) => {
+const Runtime = memo((props: RuntimeProps) => {
     const dispatch = useAppDispatch();
     const {bpm} = useAppSelector(selectSettings);
-    const {userTimestamps} = useAppSelector(selectRunning);
+    const {userTimestamps} = useAppSelector(selectRuntime);
     const {play, setVolume} = props;
     const [text, setText] = useState("Get ready...");
     const [record, setRecord] = useState(false);
@@ -92,4 +92,4 @@ const Running = memo((props: RunningProps) => {
     );
 });
 
-export {Running};
+export {Runtime};

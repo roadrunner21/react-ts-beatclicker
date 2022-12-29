@@ -4,18 +4,18 @@ import type {PayloadAction, Slice} from "@reduxjs/toolkit";
 
 export type Timestamp = number;
 
-export interface RunningState {
+export interface RuntimeState {
     startTimestamp: Timestamp;
     userTimestamps: Timestamp[];
 }
 
-const initialState: RunningState = {
+const initialState: RuntimeState = {
     startTimestamp: 0,
     userTimestamps: [],
 };
 
-export const runningSlice: Slice<RunningState> = createSlice({
-    name: "running",
+export const runtimeSlice: Slice<RuntimeState> = createSlice({
+    name: "runtime",
     initialState,
     reducers: {
         setStartTimestamp: (state, action: PayloadAction<number>) => {
@@ -24,14 +24,14 @@ export const runningSlice: Slice<RunningState> = createSlice({
         addUserTimestamp: (state, action: PayloadAction<Timestamp>) => {
             state.userTimestamps = [...state.userTimestamps, action.payload];
         },
-        resetRunning: () => initialState,
+        resetRuntime: () => initialState,
     },
 });
 
-export const setStartTimestamp = createAction<Timestamp>("running/setStartTimestamp");
-export const addUserTimestamp = createAction<Timestamp>("running/addUserTimestamp");
-export const resetRunning = createAction("running/resetRunning");
+export const setStartTimestamp = createAction<Timestamp>("runtime/setStartTimestamp");
+export const addUserTimestamp = createAction<Timestamp>("runtime/addUserTimestamp");
+export const resetRuntime = createAction("runtime/resetRuntime");
 
-export const selectRunning = (state: RootState) => state.running;
+export const selectRuntime = (state: RootState) => state.runtime;
 
-export const runningReducer = runningSlice.reducer;
+export const runtimeReducer = runtimeSlice.reducer;

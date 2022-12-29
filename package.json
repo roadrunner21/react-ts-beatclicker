@@ -52,7 +52,8 @@
       "react-app/jest"
     ],
     "plugins": [
-      "simple-import-sort"
+      "simple-import-sort",
+      "react"
     ],
     "rules": {
       "@typescript-eslint/consistent-type-imports": "error",
@@ -67,6 +68,7 @@
           "avoidEscape": true
         }
       ],
+      "react/prop-types": "error",
       "import/no-default-export": "error",
       "import/no-extraneous-dependencies": "error",
       "simple-import-sort/exports": "error",

@@ -3,9 +3,9 @@ import {Box} from "@mui/material";
 import useSound from "use-sound";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {Results} from "../results/Results";
-import {Running} from "../running/Running";
+import {Runtime} from "../runtime/Runtime";
 import {Start} from "../start/Start";
-import {GAME_END, GAME_LOADING, GAME_READY, GAME_RUNNING, selectGame, setMode} from "./gameSlice";
+import {GAME_END, GAME_LOADING, GAME_READY, GAME_RUNTIME, selectGame, setMode} from "./gameSlice";
 import kick from "./KICK01.wav";
 
 function Game() {
@@ -24,7 +24,7 @@ function Game() {
     const { mode } = useAppSelector(selectGame);
     return <Box>
         {(mode === GAME_LOADING || mode === GAME_READY) && <Start/>}
-        {mode === GAME_RUNNING && <Running play={play}
+        {mode === GAME_RUNTIME && <Runtime play={play}
                                            setVolume={setVolume}/>}
         {mode === GAME_END && <Results/>}
     </Box>;
