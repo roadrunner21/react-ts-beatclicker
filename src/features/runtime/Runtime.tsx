@@ -65,12 +65,12 @@ const Runtime = memo((props: RuntimeProps) => {
     }, [gameLoop]);
 
     const handleInput = useCallback(() => {
-        if (record) {
-            dispatch(addUserTimestamp(moment().valueOf()));
-        }
-        if (userTimestamps.length === 20) {
+        if (userTimestamps.length > 20) {
             setRecord(false);
             dispatch(setMode(GAME_END));
+        }
+        if (record) {
+            dispatch(addUserTimestamp(moment().valueOf()));
         }
     }, [userTimestamps, dispatch, record]);
 
