@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {gameReducer} from "../features/game/gameSlice";
 import {runtimeReducer} from "../features/runtime/runtimeSlice";
-import {selectSettings, settingsReducer} from "../features/settings/settingsSlice";
+import {settingsReducer} from "../features/settings/settingsSlice";
 import type {Action, ThunkAction} from "@reduxjs/toolkit";
 
 const item = localStorage.getItem("reduxState");

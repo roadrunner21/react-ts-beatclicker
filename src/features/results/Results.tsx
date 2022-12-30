@@ -8,11 +8,12 @@ import {resetRuntime, selectRuntime} from "../runtime/runtimeSlice";
 import {selectSettings} from "../settings/settingsSlice";
 
 function Results() {
-    const {userTimestamps, startTimestamp} = useAppSelector(selectRuntime);
-    const {bpm} = useAppSelector(selectSettings);
-    const expectedTimestamps = useExpectedTimestamps(startTimestamp, bpm, userTimestamps.length);
-    const {score, differences} = useScore(expectedTimestamps, userTimestamps);
     const dispatch = useAppDispatch();
+    const {userTimestamps, startTimestamp} = useAppSelector(selectRuntime);
+    const {bpm, scoringAlgorithm} = useAppSelector(selectSettings);
+    const expectedTimestamps = useExpectedTimestamps(startTimestamp, bpm, userTimestamps, scoringAlgorithm);
+
+    const {score, differences} = useScore(expectedTimestamps, userTimestamps);
 
     const handleTryAgain = () => {
         dispatch(setMode(GAME_READY));
@@ -37,10 +38,9 @@ function Results() {
                               differences={differences}/>
             </Box>
             <Button onClick={handleTryAgain}
-                    sx={{ display: "block", margin: "auto" }}
+                    sx={{display: "block", margin: "auto"}}
                     variant={"outlined"}>
-                Try
-                again
+                Try again
             </Button>
         </Container>
     );
