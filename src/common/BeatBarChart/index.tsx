@@ -17,21 +17,21 @@ interface BeatBarChartProps {
 }
 
 function BeatBarChart(beatBarChartProps: BeatBarChartProps) {
-    const { differences, expectedTimestamps } = beatBarChartProps;
+    const {differences, expectedTimestamps} = beatBarChartProps;
 
     // find highest value and round to 100. this will determine the min/max of the x axis
     let highestValue = Math.ceil(Math.max(...differences.map(Math.abs)) / 100) * 100;
 
-    // if highest value is below 300, set it to 300 to not make it seem like the user did poorly even if he did good :)
-    if (highestValue < 300) {
-        highestValue = 300;
+    // if highest value is below 100, set it to 100 to not make it seem like the user did poorly even if he did good :)
+    if (highestValue < 100) {
+        highestValue = 100;
     }
 
     const data = {
         labels: Array.from(Array(expectedTimestamps.length).keys()),
         datasets: [
             {
-                label: "Differences",
+                label: "Differences [ms]",
                 data: differences,
                 backgroundColor: "rgba(0, 48, 215, 0.2)",
                 borderColor: "rgba(88, 125, 255, 1)",
