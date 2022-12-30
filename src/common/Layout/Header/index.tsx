@@ -33,7 +33,7 @@ function Header() {
                         flexGrow: 1,
                         justifyContent: "flex-end",
                     }}>
-                        <SettingsSidebarButton disabled={!(mode === GAME_RUNTIME || mode === GAME_END)}/>
+                        <SettingsSidebarButton disabled={mode === GAME_RUNTIME || mode === GAME_END}/>
                     </Box>
                 </Toolbar>
             </Container>
