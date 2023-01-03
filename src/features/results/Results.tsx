@@ -1,4 +1,5 @@
 import React from "react";
+import {Loop, Share} from "@mui/icons-material";
 import {Box, Button, Container, Typography} from "@mui/material";
 import {BeatBarChart} from "../../common";
 import {useAppDispatch, useAppSelector, useExpectedTimestamps} from "../../hooks";
@@ -20,6 +21,11 @@ function Results() {
         dispatch(resetRuntime());
     };
 
+    const handleShare = () => {
+        dispatch(setMode(GAME_READY));
+        dispatch(resetRuntime());
+    };
+
     return (
         <Container>
             <Typography align={"center"}
@@ -37,11 +43,23 @@ function Results() {
                 <BeatBarChart expectedTimestamps={expectedTimestamps}
                               differences={differences}/>
             </Box>
-            <Button onClick={handleTryAgain}
-                    sx={{display: "block", margin: "auto"}}
-                    variant={"outlined"}>
-                Try again
-            </Button>
+            <Box sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+            }}>
+                <Button onClick={handleTryAgain}
+                        startIcon={<Loop/>}
+                        variant={"outlined"}>
+                    Try again
+                </Button>
+                <Button onClick={handleShare}
+                        startIcon={<Share/>}
+                        variant={"outlined"}>
+                    Share
+                </Button>
+            </Box>
         </Container>
     );
 }
